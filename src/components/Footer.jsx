@@ -1,22 +1,39 @@
+import { Link } from "react-router-dom"
 function Footer() {
   return (
-    <footer className="bg-pink-100 text-center p-1 mt-400">
+    <footer className="bg-pink-100
+     text-center 
+     p-1 
+     mt-10">
 
-      <h2 className="text-lg font-bold text-pink-600">
-        FashionX Store
-      </h2>
+      <div className="
+flex
+justify-around
+bg-gray-100
+p-5
+">
 
-      <p className="text-sm mt-2 text-gray-600">
-        Contact: support@fashionx.com
-      </p>
+<Link to="/home">
+Home
+</Link>
 
-      <p className="text-sm text-gray-600">
-        References: React, Tailwind CSS
-      </p>
 
-      <p className="text-xs mt-3 text-gray-500">
-        © 2026 FashionX
-      </p>
+<Link to="/cart">
+Bag
+</Link>
+
+
+
+
+<Link to="/contact">
+Contact
+</Link>
+
+
+<Link to="/references">
+References
+</Link>
+</div>
 
     </footer>
   )
