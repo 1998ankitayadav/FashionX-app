@@ -1,12 +1,10 @@
-function Category(){
+function Category({setCategory}){
 
 const categories=[
 "All",
 "Men",
 "Women",
-"Kids",
-"Footwear",
-"Home Living"
+
 ]
 
 
@@ -26,10 +24,15 @@ categories.map((item)=>(
 
 <div
 key={item}
+
+onClick={()=>setCategory(item)}
+
 className="
 font-medium
 cursor-pointer
 hover:text-pink-600
+text-yellow-600
+dark:text-pink-600
 "
 >
 

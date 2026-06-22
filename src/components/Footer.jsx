@@ -1,16 +1,25 @@
 import { Link } from "react-router-dom"
 function Footer() {
   return (
-    <footer className="bg-pink-100
+    <footer className="bg-pink-800
      text-center 
-     p-1 
-     mt-10">
+     dark:bg-black
+     dark:text-pink-600
+     text-yellow-600
+     border-t
+     border-pink-300
+     dark:border-pink-600
+     mt-10
+     shadow-md">
 
       <div className="
 flex
 justify-around
-bg-gray-100
-p-5
+bg-pink-100
+text-yellow-600
+dark:bg-black
+dark:text-pink-600
+p-2
 ">
 
 <Link to="/home">

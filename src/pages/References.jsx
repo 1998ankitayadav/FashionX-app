@@ -8,7 +8,10 @@ const navigate=useNavigate()
 
 return(
 
-<div className="p-5 relative">
+<div className="p-5 relative
+dark:text-pink-600
+text-yellow-600
+">
 
 
 <button
