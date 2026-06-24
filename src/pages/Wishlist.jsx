@@ -1,4 +1,4 @@
-function Wishlist({wishlist}){
+function Wishlist({wishlist,cart,setCart}){
 
 
 return(
@@ -66,6 +66,32 @@ h-32
 <p>
 {item.price}
 </p>
+<button
+onClick={()=>{
+    const alreadyInCart = 
+    cart.some(
+        (product)=>product.id===item.id)
+        if(alreadyInCart){
+            return
+        }
+        setCart([
+            ...cart,
+            {
+                ...item,
+                qty:1
+            }
+        ])
+}}
+ 
+className="mt-2
+bg-pink-600
+text-white
+px-3
+py-1
+rounded
+hover:bg-pink-700">
+Add to Cart
+</button>
 
 
 </div>

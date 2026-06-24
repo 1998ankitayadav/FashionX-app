@@ -1,5 +1,11 @@
 import { FaHeart } from "react-icons/fa"
-function Product({category,search="", wishlist=[], setWishlist}){
+function Product({
+    category,
+    search="",
+    wishlist=[], 
+    setWishlist,
+    cart,
+    setCart}){
 
 
 const products=[
@@ -133,9 +139,6 @@ rounded
 
 
 
-{/* <p>
-{item.price}
-</p> */}
 
 <div className="
 flex
@@ -152,14 +155,37 @@ mt-3
 
 
 <button
+
 onClick={()=>{
 
-setWishlist([
-...wishlist,
-item
-])
+    const alreadyLiked = 
+    wishlist.some(
+        (product)=>product.id === item.id
+    )
+    if(alreadyLiked){
 
-}}
+        setWishlist(
+            wishlist.filter(
+                (product) => product.id !== item.id
+            )
+        )
+    } else{
+        setWishlist([
+            ...wishlist,item
+        ])
+    }
+          
+    }}
+    className={`text-xl
+        ${
+            wishlist.some(
+                (product)=>product.id === item.id 
+            )
+            ?
+            "text-pink-600 dark:text-yellow-500"
+            :
+            "text-yellow-600 dark:text-pink-600"
+        }`}
 
 >
 
@@ -173,6 +199,24 @@ item
 {item.price}
 </p>
 <button
+
+onClick={()=>{
+ 
+    const alreadyInCart = 
+    cart.some(
+        (product)=>product.id === item.id
+    )
+    if(alreadyInCart){
+        return
+    }
+    setCart([
+        ...cart,
+        {
+            ...item,
+            qty:1
+        }
+    ])
+}}
 className="
 mt-2
 bg-pink-600
@@ -180,6 +224,7 @@ text-white
 px-3
 py-1
 rounded
+hover:bg-pink-700
 "
 >
 Add to Cart

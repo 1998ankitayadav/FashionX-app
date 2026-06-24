@@ -2,7 +2,15 @@
 import Product from "../components/Product"
 
 
-function Home({category,wishlist,setWishlist,search}){
+function Home({
+    category,
+    wishlist,
+    setWishlist,
+    search,
+    cart,
+    setCart
+})
+{
 
 
 return(
@@ -20,6 +28,8 @@ category={category}
 wishlist={wishlist}
 setWishlist={setWishlist}
 search={search}
+cart={cart}
+setCart={setCart}
 />
 
 

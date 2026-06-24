@@ -17,8 +17,12 @@ function App() {
 
    const [dark,setDark] = useState(false)
    const [category,setCategory] = useState("All")
-   const [wishlist,setWishlist] = useState([])
+   const [wishlist,setWishlist] = useState(
+    JSON.parse(localStorage.getItem("wishlist")) || [])
    const [search, setSearch] = useState("")
+   const [cart,setCart] = useState(
+JSON.parse(localStorage.getItem("cart")) || []
+)
 
    useEffect(()=>{
 
@@ -28,6 +32,24 @@ dark
 )
 
 },[dark])
+useEffect(()=>{
+  
+
+localStorage.setItem(
+  "wishlist",
+  JSON.stringify(wishlist)
+)
+},[wishlist])
+
+useEffect(()=>{
+
+  localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+  )
+  },[cart])
+
+
   return (
 
 
@@ -41,26 +63,29 @@ text-yellow-600
 dark:bg-black
 dark:text-pink-600
 `}> 
- 
+
+
+    <div className="
+sticky
+top-0">
+
+
     <Navbar 
     dark={dark}
      setDark={setDark}
      search={search}
      setSearch={setSearch}
      /> 
-      {/* removed category={category} */}
+         </div>
+ 
+    
+
+    
     <Category  setCategory={setCategory}/>
-    <main className="flex-1">
+      
+    <main className="flex-1 ">
      <Routes>
-        {/* <Route path="/" element={
-          <Home 
-        category={category}
-         wishlist={wishlist} 
-         setWishlist={setWishlist}
-          search={search}
-          />
-        }
-           /> */}
+      
            <Route 
 path="/home" 
 element={
@@ -69,12 +94,18 @@ category={category}
 search={search}
 wishlist={wishlist}
 setWishlist={setWishlist}
+cart={cart}
+setCart={setCart}
 />
 }
 />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart}/>} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/wishlist" element={<Wishlist wishlist={wishlist}/>}/>
+        <Route path="/wishlist" element={
+        <Wishlist
+        wishlist={wishlist} 
+        cart={cart} 
+        setCart={setCart}/>}/>
         <Route path="/notification" element={<Notification/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/references" element={<References/>}/>
@@ -83,7 +114,11 @@ setWishlist={setWishlist}
         
       </Routes>
        </main>
+   
+
+      
       <Footer />
+       
      </div>
   
   )

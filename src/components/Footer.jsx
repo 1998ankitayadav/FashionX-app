@@ -1,4 +1,10 @@
 import { Link } from "react-router-dom"
+import { 
+FaHome,
+FaShoppingCart,
+FaPhone,
+FaBook
+} from "react-icons/fa"
 function Footer() {
   return (
     <footer className="bg-pink-800
@@ -22,25 +28,45 @@ dark:text-pink-600
 p-2
 ">
 
-<Link to="/home">
-Home
+<Link to="/home"
+classNAme="text-xl">
+  <FaHome className="text-xl"/>
+
 </Link>
 
 
-<Link to="/cart">
-Bag
+<Link to="/cart"
+className="flex flex-col items-center">
+
+<FaShoppingCart className="text-xl"/>
+
+
+
 </Link>
 
 
 
+<Link 
+to="/contact"
+className="flex flex-col items-center">
 
-<Link to="/contact">
-Contact
+<FaPhone className="text-xl"/>
+
+
+
 </Link>
 
 
-<Link to="/references">
+<Link 
+to="/references"
+className="flex flex-col items-center">
+
+<FaBook className="text-xl"/>
+
+<span>
 References
+</span>
+
 </Link>
 </div>
 
