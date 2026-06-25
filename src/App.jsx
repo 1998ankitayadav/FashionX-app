@@ -83,11 +83,12 @@ top-0">
     
     <Category  setCategory={setCategory}/>
       
-    <main className="flex-1 ">
+    <main className="flex-1 
+    pb-22">
      <Routes>
       
            <Route 
-path="/home" 
+path="/" 
 element={
 <Home
 category={category}
@@ -114,11 +115,17 @@ setCart={setCart}
         
       </Routes>
        </main>
-   
+   <div className="
+fixed
+bottom-0
+left-0
+w-full
+z-50
+">
 
       
       <Footer />
-       
+       </div>
      </div>
   
   )

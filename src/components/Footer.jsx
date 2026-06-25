@@ -25,10 +25,10 @@ bg-pink-100
 text-yellow-600
 dark:bg-black
 dark:text-pink-600
-p-2
+p-1
 ">
 
-<Link to="/home"
+<Link to="/"
 classNAme="text-xl">
   <FaHome className="text-xl"/>
 
@@ -63,9 +63,9 @@ className="flex flex-col items-center">
 
 <FaBook className="text-xl"/>
 
-<span>
+{/* <span>
 References
-</span>
+</span> */}
 
 </Link>
 </div>
