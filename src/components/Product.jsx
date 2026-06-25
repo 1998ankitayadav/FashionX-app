@@ -1,6 +1,6 @@
 import { FaHeart } from "react-icons/fa"
 import womenDress from "../assets/women-dress.jpg"
-import menTshirt from "../assets/Men-t-shirt.jpg"
+import menTshirt from "../assets/Men-T-shirt.jpg"
 import shoes from "../assets/adidas-shoes.jpg"
 import kids from "../assets/kids-wear.jpg"
 import homeDecor from "../assets/home-decor.jpg"
