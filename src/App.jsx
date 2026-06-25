@@ -62,6 +62,7 @@ bg-pink-100
 text-yellow-600
 dark:bg-black
 dark:text-pink-600
+overflow-hidden
 `}> 
 
 

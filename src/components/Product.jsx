@@ -1,4 +1,14 @@
 import { FaHeart } from "react-icons/fa"
+import womenDress from "../assets/women-dress.jpg"
+import menTshirt from "../assets/Men-t-shirt.jpg"
+import shoes from "../assets/adidas-shoes.jpg"
+import kids from "../assets/kids-wear.jpg"
+import homeDecor from "../assets/home-decor.jpg"
+import bag from "../assets/pink-hand-bag.jpg"
+import hoodie from "../assets/nike-hoodie.jpg"
+import womenSaree from "../assets/saree.jpg"
+import makeup from "../assets/beauty.jpg"
+import plants from "../assets/plant.jpg"
 function Product({
     category,
     search="",
@@ -14,7 +24,7 @@ id:1,
 name:"Men T-Shirt",
 category:"Men",
 price:"₹799",
-image:"https://via.placeholder.com/200"
+image:menTshirt
 },
 
 {
@@ -22,7 +32,7 @@ id:2,
 name:"Women Dress",
 category:"Women",
 price:"₹1299",
-image:"https://via.placeholder.com/200"
+image:womenDress
 },
 
 {
@@ -30,7 +40,7 @@ id:3,
 name:"Adidas Shoes",
 category:"Women",
 price:"₹1999",
-image:"https://via.placeholder.com/200"
+image:shoes
 },
 
 {
@@ -38,31 +48,52 @@ id:4,
 name:"Kids Wear",
 category:"All",
 price:"₹599",
-image:"https://via.placeholder.com/200"
+image:kids
 },
 
 {
 id:5,
 name:"Home Decor",
-category:"Home Living",
+category:"All",
 price:"₹999",
-image:"https://via.placeholder.com/200"
+image:homeDecor
+},
+
+{
+id:6,
+name:"Pink Handbag",
+category:"Women",
+price:"₹899",
+image:bag
 },
 
 {
 id:7,
-name:"Pink Handbag",
-category:"Women",
-price:"₹899",
-image:"https://via.placeholder.com/200"
-},
-
-{
-id:8,
 name:"Nike Hoodie",
 category:"Men",
 price:"₹1499",
-image:"https://via.placeholder.com/200"
+image:hoodie
+},
+{
+id:8,
+name:"Indoor plant",
+category:"All",
+price:"₹599",
+image:plants
+},
+{
+id:9,
+name:"Makeup",
+category:"Women",
+price:"₹2999",
+image:makeup
+},
+{
+id:10,
+name:"saree",
+category:"Women",
+price:"₹1999",
+image:womenSaree
 },
 // {
 // id:number,
