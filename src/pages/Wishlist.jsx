@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom"
 function Wishlist({wishlist,cart,setCart}){
 
+const navigate = useNavigate()
 
 return(
 
@@ -92,7 +94,71 @@ rounded
 hover:bg-pink-700">
 Add to Cart
 </button>
+{/* <button
 
+onClick={()=>{
+
+setCart([
+{
+...item,
+qty:1
+}
+])
+
+navigate("/cart")
+
+}}
+
+className="
+mt-2
+ml-2
+bg-yellow-500
+text-white
+px-3
+py-1
+rounded
+">
+
+Buy Now
+
+</button> */}
+<button
+
+onClick={()=>{
+
+const alreadyInCart = cart.some(
+(product)=>product.id===item.id
+)
+
+if(!alreadyInCart){
+
+setCart([
+...cart,
+{
+...item,
+qty:1
+}
+])
+
+}
+
+navigate("/cart")
+
+}}
+
+className="
+mt-2
+ml-2
+bg-yellow-500
+text-white
+px-3
+py-1
+rounded
+">
+
+Buy Now
+
+</button>
 
 </div>
 

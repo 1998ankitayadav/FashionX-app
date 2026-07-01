@@ -134,14 +134,78 @@ setCart(
   </div>
   ))
 }
+
 {
-  cart.legth>0 &&
-  <h2 classNAme="
-  mt-5
-  text-xl
-  font-bold">
-    Total: ₹{totalPrice}
-  </h2>
+cart.length>0 &&
+
+<div className="
+mt-5
+border-t
+pt-5
+">
+
+
+<h2 className="
+text-xl
+font-bold
+">
+
+Price Details
+
+</h2>
+
+
+<p>
+Product Total : ₹{totalPrice}
+</p>
+
+
+<p>
+GST (18%) : ₹{Math.round(totalPrice*0.18)}
+</p>
+
+
+<p>
+Delivery : ₹50
+</p>
+
+
+<h2 className="
+text-2xl
+font-bold
+mt-3
+">
+
+Total Amount : ₹
+{
+totalPrice +
+Math.round(totalPrice*0.18)
++
+50
+}
+
+</h2>
+
+
+<button
+className="
+
+bg-pink-600
+text-white
+dark:text-black
+px-5
+py-2
+mt-5
+rounded
+">
+
+Proceed To Payment
+
+</button>
+
+
+</div>
+
 }
     </div>
   ) 

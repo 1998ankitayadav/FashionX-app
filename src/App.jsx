@@ -14,8 +14,7 @@ import Product from "./components/Product"
 
 import { Routes, Route } from "react-router-dom"
 function App() {
-
-   const [dark,setDark] = useState(false)
+const [dark,setDark] = useState( false)
    const [category,setCategory] = useState("All")
    const [wishlist,setWishlist] = useState(
     JSON.parse(localStorage.getItem("wishlist")) || [])
@@ -32,6 +31,7 @@ dark
 )
 
 },[dark])
+
 useEffect(()=>{
   
 

@@ -9,6 +9,7 @@ import hoodie from "../assets/nike-hoodie.jpg"
 import womenSaree from "../assets/saree.jpg"
 import makeup from "../assets/beauty.jpg"
 import plants from "../assets/plant.jpg"
+import { useNavigate } from "react-router-dom"
 function Product({
     category,
     search="",
@@ -94,16 +95,10 @@ name:"saree",
 category:"Women",
 price:"₹1999",
 image:womenSaree
-},
-// {
-// id:number,
-// name:"product name",
-// category:"Men/Women/All",
-// price:"₹price",
-// image:"image link"
-// }
-]
+}
 
+]
+const navigate = useNavigate()
 const filteredProducts = products.filter((item)=>{
 
 const categoryMatch =
@@ -261,7 +256,35 @@ hover:bg-pink-700
 Add to Cart
 </button>
 
+<button
 
+onClick={()=>{
+
+setCart([
+{
+...item,
+qty:1
+}
+])
+navigate("/cart")
+
+}}
+
+className="
+mt-2
+ml-2
+bg-yellow-500
+text-white
+px-3
+py-1
+rounded
+"
+
+>
+
+Buy Now
+
+</button>
 </div>
 
 
