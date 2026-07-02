@@ -8,7 +8,9 @@ function Home({
     setWishlist,
     search,
     cart,
-    setCart
+    setCart,
+    sort,
+    setSort
 })
 {
 

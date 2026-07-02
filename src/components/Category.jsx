@@ -15,6 +15,7 @@ flex
 gap-6
 justify-center
 p-5
+pt-33
 overflow-x-auto
 ">
 

@@ -4,63 +4,73 @@ import { Link } from "react-router-dom"
 function Navbar({dark,setDark,setSearch}){
     return(
      <>
-     {/* Top Location Bar */}
-     <div className="
-      flex
-      items-center
-      gap-2
-      px-4
-      py-2
+    <nav className="
+      fixed
+      top-0
+      left-0
+      w-full
+      h-28
+      z-50
       bg-pink-200
-      text-yellow-600
       dark:bg-black
       dark:text-pink-600
-      text-sm
+      shadow-md 
+      flex 
+      flex-col
+    
+      md:px-10
       shadow-md
-border-b
-border-pink-300
-dark:border-pink-600
+      border-b
+      border-pink-300
+      dark:border-pink-600
       ">
+          {/* Top Row */}
+    <div
+    className="
+    flex
+item-center
+justify-start
+    px-6
+    pt-2
+    text-yellow-600
+    dark:text-pink-600
+    text-sm
+    "
+    >
 
-<Link 
-to="/location"
+        <Link
+        to="/location"
+        className="flex items-center gap-2 hover:underline"
+        >
+
+            <FaMapMarkerAlt />
+
+            <div>
+
+                <p className="text-xs text-gray-600">
+                    Deliver To
+                </p>
+
+                <h4 className="font-semibold">
+                    Raebareli, Uttar Pradesh
+                </h4>
+
+            </div>
+
+        </Link>
+
+    </div>
+        {/* Bottom Row */}
+<div
 className="
+w-full
 flex
 items-center
-gap-2
-hover:underline
+justify-between
+px-6
+mt-2
 "
 >
-<FaMapMarkerAlt/>
-
-<span>
-Location / Address
-</span>
-
-</Link>
-
-</div>
-    <nav className="w-full
-     h-20
-    bg-pink-200
-    dark:bg-black
-    dark:text-pink-600
-    shadow-md 
-    flex 
-    items-center
-     justify-between
-     md:px-10
-      px-4 
-      shadow-md
-border-b
-border-pink-300
-dark:border-pink-600
-      ">
-        
-{/* <Link 
-  to="/" 
-  className="flex items-center gap-2 cursor-pointer"
-> */}
   <div className=" text-2xl 
         font-bold
         text-white
@@ -72,19 +82,19 @@ dark:border-pink-600
          hover:text-white 
         hover:scale-105 
         transition">
-    F
-  </div>
+          F
+          </div>
          {/* </Link> */}
 
             <div className="
             flex
-            items-center
+                     items-center
            bg-white
-text-yellow-600
-dark:bg-black00
-dark:text-pink-600
+           text-yellow-600
+           dark:bg-black00
+            dark:text-pink-600
             rounded-lg
-            px-3
+            px-1
             w-1/3
             ">
               <FaSearch/>
@@ -110,7 +120,7 @@ dark:text-pink-600
              items-center
              text-xl
              text-yellow-600
-dark:text-pink-600
+            dark:text-pink-600
              ">
 
            <Link to="/wishlist">
@@ -138,6 +148,7 @@ dark:hover:bg-pink-700
                  ">
                 {dark ? "🌸" : "🌙"}
                 </button>
+                </div>
             </div>
           
     </nav>

@@ -16,7 +16,10 @@ function Product({
     wishlist=[], 
     setWishlist,
     cart,
-    setCart}){
+    setCart,
+    sort,
+    setSort
+}){
 
 
 const products=[

@@ -19,6 +19,7 @@ const [dark,setDark] = useState( false)
    const [wishlist,setWishlist] = useState(
     JSON.parse(localStorage.getItem("wishlist")) || [])
    const [search, setSearch] = useState("")
+   const [sort, setSort] = useState("default")
    const [cart,setCart] = useState(
 JSON.parse(localStorage.getItem("cart")) || []
 )
@@ -67,8 +68,7 @@ overflow-hidden
 
 
     <div className="
-sticky
-top-0">
+position-fixed">
 
 
     <Navbar 
@@ -98,6 +98,8 @@ wishlist={wishlist}
 setWishlist={setWishlist}
 cart={cart}
 setCart={setCart}
+sort={sort}
+setSort={setSort}
 />
 }
 />
