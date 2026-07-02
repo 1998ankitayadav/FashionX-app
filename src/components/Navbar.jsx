@@ -1,7 +1,7 @@
 import { FaHeart, FaBell, FaUser,FaSearch,FaMapMarkerAlt } from "react-icons/fa"
 
 import { Link } from "react-router-dom"
-function Navbar({dark,setDark,setSearch}){
+function Navbar({dark,setDark,setSearch,location}){
     return(
      <>
     <nav className="
@@ -35,6 +35,7 @@ justify-start
     text-yellow-600
     dark:text-pink-600
     text-sm
+    border-b
     "
     >
 
@@ -47,12 +48,12 @@ justify-start
 
             <div>
 
-                <p className="text-xs text-gray-600">
+                <p className="text-xs text-pink-600 dark:text-white">
                     Deliver To
                 </p>
 
                 <h4 className="font-semibold">
-                    Raebareli, Uttar Pradesh
+                   {location}
                 </h4>
 
             </div>

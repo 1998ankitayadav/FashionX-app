@@ -20,6 +20,9 @@ const [dark,setDark] = useState( false)
     JSON.parse(localStorage.getItem("wishlist")) || [])
    const [search, setSearch] = useState("")
    const [sort, setSort] = useState("default")
+   const [location, setLocation] = useState(()=>{
+    return localStorage.getItem("location") || "Select Location";
+   });
    const [cart,setCart] = useState(
 JSON.parse(localStorage.getItem("cart")) || []
 )
@@ -49,6 +52,11 @@ useEffect(()=>{
     JSON.stringify(cart)
   )
   },[cart])
+ useEffect(()=>{
+  localStorage.setItem(
+    "location",location
+  );
+}, [location]);
 
 
   return (
@@ -76,6 +84,7 @@ position-fixed">
      setDark={setDark}
      search={search}
      setSearch={setSearch}
+     location={location}
      /> 
          </div>
  
@@ -113,7 +122,10 @@ setSort={setSort}
         <Route path="/notification" element={<Notification/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/references" element={<References/>}/>
-        <Route path="/location" element={<Location/>}/>
+        <Route path="/location" element={<Location
+        location={location}
+        setLocation={setLocation}
+          />}/>
 
         
       </Routes>

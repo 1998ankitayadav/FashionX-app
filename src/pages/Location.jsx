@@ -1,8 +1,10 @@
 import {useNavigate} from "react-router-dom"
-
-function Location(){
+import { useState } from "react";
+function Location({location, setLocation}){
 
 const navigate = useNavigate()
+const [address, setAddress] = useState(
+    location === "Select Location" ? "" : location);
 
 return(
 
@@ -44,6 +46,8 @@ Enter your delivery address
 
 
 <input
+value={address}
+onChange={(e) => setAddress(e.target.value)}
 placeholder="Enter Address"
 className="
 mt-5
@@ -54,7 +58,23 @@ w-full
 dark:bg-black-800
 "
 />
+<button 
+onClick={() => {
+setLocation(address);
+navigate(-1);
+}}
+className="
+mt-5
+bg-pink-600
+text-white
+px-5
+py-2
+rounded
+hover:bg-pink-700
+">
+Save Address
 
+</button>
 
 </div>
 
